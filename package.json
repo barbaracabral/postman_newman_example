@@ -1,0 +1,28 @@
+{
+  "name": "postman_newman_example",
+  "version": "1.0.0",
+  "keywords": [
+    "postman",
+    "newman",
+    "rest_testing",
+    "api_testing"
+  ],
+  "main": "index.js",
+  "description": "Aplicação de Testes Automatizados para testes de API Rest utilizando Postman e Newman",
+  "scripts": {
+    "test": "newman run <collection_name.json>"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@https://github.com/barbaracabral/postman_newman_example.git"
+  },
+  "author": "Bárbara Cabral",
+  "bugs": {
+    "url": "https://github.com/barbaracabral/postman_newman_example/issues"
+  },
+  "homepage": "https://barbaracabral.wordpress.com/",
+  "devDependencies": {},
+  "dependencies": {
+    "newman": "^3.9.2"
+  }
+}

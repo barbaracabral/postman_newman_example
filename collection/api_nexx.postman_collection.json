@@ -1,0 +1,252 @@
+{
+	"info": {
+		"name": "Nexxera",
+		"_postman_id": "05c02823-1caf-cc66-823d-6ab47175730f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "rest",
+			"description": "",
+			"item": [
+				{
+					"name": "Débitos Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/v1/debits/?limit=100&offset=0&ordering=debit_branch",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"debits",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "100",
+									"equals": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"equals": true
+								},
+								{
+									"key": "ordering",
+									"value": "debit_branch",
+									"equals": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Código de Barras Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/v1/revenues/?limit=2&offset=0&ordering=-payment_date",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"revenues",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2",
+									"equals": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"equals": true
+								},
+								{
+									"key": "ordering",
+									"value": "-payment_date",
+									"equals": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bancos Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{API_URL}}/api/v1/banks/"
+					},
+					"response": []
+				},
+				{
+					"name": "Empresas Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{API_URL}}/api/v1/companies/"
+					},
+					"response": []
+				},
+				{
+					"name": "Convênios Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{API_URL}}/api/v1/covenants/"
+					},
+					"response": []
+				},
+				{
+					"name": "Débitos Totais (Listagem)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{API_URL}}/api/v1/debits/totals/"
+					},
+					"response": []
+				},
+				{
+					"name": "Código de Barras Totais (Listagem)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{API_URL}}/api/v1/revenues/totals/"
+					},
+					"response": []
+				},
+				{
+					"name": "Arquivo Upload",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3d39c14b-e463-45f0-92c1-15270eb87bab",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"ORA-00904\");",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "2376171206_01.COMGAS"
+								}
+							]
+						},
+						"url": "{{API_URL}}/api/v1/upload/remesssa",
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Retornos de remessa Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{API_URL}}/api/v1/debits/return/291/"
+					},
+					"response": []
+				},
+				{
+					"name": "Ranking Código de Barras ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{API_URL}}/api/v1/revenues/ranking"
+					},
+					"response": []
+				},
+				{
+					"name": "Ranking Débito Automático",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{API_URL}}/api/v1/debits/ranking/"
+					},
+					"response": []
+				},
+				{
+					"name": "Dashboard Totalizadores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{API_URL}}/api/v1/general/totals/",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Conciliação",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": "{{API_URL}}/api/v1/reconcile/",
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
